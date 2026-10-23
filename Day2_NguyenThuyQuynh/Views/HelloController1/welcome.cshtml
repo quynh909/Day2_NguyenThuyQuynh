@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Trang Chào Hỏi";
+}
+
+<h1>@ViewData["Message"]</h1>
+
+<p>Số lần hiển thị: @ViewData["NumTimes"]</p>
+
+<!-- Hiển thị lặp lại nhiều lần -->
+@for (int i = 1; i <= (int)ViewData["NumTimes"]!; i++)
+{
+    <p>@i. Xin chào! 😊</p>
+}
+
+<hr>
+<p>
+    <a asp-action="Index">Về trang chủ</a> |
+    <a asp-action="welcome" asp-route-name="Quỳnh" asp-route-numTimes="5">Chào Quỳnh 5 lần</a>
+</p>
